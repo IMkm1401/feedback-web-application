@@ -7,5 +7,6 @@ def feedback(request):
         if form.is_valid():
               form.save()
    form = forms.form_name()
-   return render(request,"feedbacks.html",{"feedbackform":form})
+   feedbacks = models.model_name.objects.all().oreder_by("-date")
+   return render(request,"feedbacks.html",{"val_name":form,"val_name":feedbacks})
   
